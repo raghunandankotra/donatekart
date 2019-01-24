@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Products</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
+<script src="app/app.js"></script>
+<script src="app/controllers/demoController.js"></script>
+</head>
+<body ng-app="demo" class="ng-scope">
+<div ng-controller="demoController">
+<h2>{{Message}}</h2>
+ <ul class="list-inline">
+          <li  ng-repeat="product in Products">
+            <figure>
+              <img width="100" height="100" ng-src="{{product.fileLocation}}"/>
+              <figcaption>
+                  {{product.name}}  
+				    <h3>{{product.Price}}</h3>
+              </figcaption>
+            </figure>
+           
+          </li>
+        </ul>
+
+		<label for="singleSelect"> Currency: </label><br>
+    <select name="singleSelect" id="singleSelect" ng-model="data.singleSelect" ng-change="onChange()">
+      <option value="">---Please select---</option> <!-- not selected / blank option -->
+      <option value="1">INR</option> <!-- interpolation -->
+      <option value="2">USD</option>
+    </select>
+	</div>
+</body>
+</html>
